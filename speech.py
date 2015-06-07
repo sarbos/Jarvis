@@ -1,5 +1,7 @@
 from gtts import gTTS
+import pyglet
 
+tmp = r"tmp.mp3"
 
 class speech:
 
@@ -9,3 +11,5 @@ class speech:
 	def speak(self, phrase):
 		tts = gTTS(text=phrase, lang=self.language)
 		tts.save("tmp.mp3")
+		music = pyglet.media.load(tmp)
+		music.play()
